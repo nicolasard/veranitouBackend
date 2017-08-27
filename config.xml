@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config>
+  <SQLServer>127.0.0.1</SQLServer>
+  <SQLDB>veranitou</SQLDB>
+  <SQLUser>root</SQLUser>
+  <SQLPassword>123</SQLPassword>
+  <MailSMTP></MailSMTP>
+  <MailUser></MailUser>
+  <MailPassword></MailPassword>
+</config>

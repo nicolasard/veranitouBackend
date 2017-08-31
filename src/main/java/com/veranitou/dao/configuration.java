@@ -7,11 +7,18 @@ import org.w3c.dom.NodeList;
 import org.w3c.dom.Node;
 import org.w3c.dom.Element;
 import java.io.File;
+import org.apache.log4j.Logger;
 
 /* Funcion: Carga la configuración de la aplicación desde un archivo XML
  *  */
 public class configuration {
+
+    final static Logger logger = Logger.getLogger(configuration.class);
+    
     public void configuration(){
+
+	logger.error("OPA QUERIDO");
+
 	try{
 	File fXmlFile = new File("/gitrepos/veranitouBackend/config.xml");
 	DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();

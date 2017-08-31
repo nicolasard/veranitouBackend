@@ -10,7 +10,8 @@ public class configuracionDao {
     @Test
     public void testConfig(){
 	configuration cfg = new configuration();
-	assertEquals(6,6);
+	int a = 5;
+	assertEquals(6,a);
     }
 
 }

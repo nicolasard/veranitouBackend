@@ -50,6 +50,22 @@
       <version>2.9.0</version>
       <type>pom</type>
     </dependency>
+
+
+    <!-- MySQL database driver -->
+      <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>5.1.9</version>
+      </dependency>
+
+      <!-- Hibernate framework -->
+      <dependency>
+        <groupId>hibernate</groupId>
+        <artifactId>hibernate3</artifactId>
+        <version>3.2.3.GA</version>
+      </dependency>
+
   </dependencies>
 
   <properties>

@@ -30,7 +30,7 @@ public class propiedadController {
 
     @CrossOrigin(origins="*")
     @RequestMapping("/configuration")
-    public String configuracion(){
+    public List<Consulta> configuracion(){
        logger.info("/configuration");
 
         Session session = HibernateUtil.getSessionFactory().openSession();

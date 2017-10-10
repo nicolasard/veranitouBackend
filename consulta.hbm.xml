@@ -4,13 +4,12 @@
  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">  
   
  <hibernate-mapping>  
-  <class name="com.javatpoint.mypackage.Employee" table="emp1000">  
-    <id name="id">  
-     <generator class="assigned"></generator>  
-    </id>  
+  <class name="com.veranitou.dao.Consulta" table="consulta">  
             
-    <property name="firstName"></property>  
-    <property name="lastName"></property>  
+		<id name="consultaId" type="java.lang.Integer">
+			<column name="consultaId" />
+			<generator class="identity" />
+		</id> 
     
   </class>
  </hibernate-mapping>  

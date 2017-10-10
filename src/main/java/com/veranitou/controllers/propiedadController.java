@@ -12,6 +12,10 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.apache.log4j.Logger;
 import com.veranitou.dao.configuration;
 
+import org.hibernate.Session;
+import com.veranitou.dao.HibernateUtil;
+import com.veranitou.dao.Consulta;
+
 @RestController
 public class propiedadController {
     
@@ -28,7 +32,12 @@ public class propiedadController {
     @RequestMapping("/configuration")
     public String configuracion(){
        logger.info("/configuration");
-       configuration conf = new configuration();
-	   return "";
+
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        List<Consulta> consultas = session.createQuery("from Consulta ").list();
+        session.getTransaction().commit();
+       //configuration conf = new configuration();
+	   return consultas;
     }
 }

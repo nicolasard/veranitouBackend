@@ -2,7 +2,7 @@
 <config>
   <SQLServer>127.0.0.1</SQLServer>
   <SQLDB>veranitou</SQLDB>
-  <SQLUser>root</SQLUser>
+  <SQLUser>user</SQLUser>
   <SQLPassword>123</SQLPassword>
   <MailSMTP></MailSMTP>
   <MailUser></MailUser>

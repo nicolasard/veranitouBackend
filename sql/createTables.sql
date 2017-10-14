@@ -18,5 +18,6 @@ CREATE TABLE `consulta` (
 # Dummy data 
 TRUNCATE TABLE consulta; 
 INSERT INTO consulta (propiedadId,fecha,nombre,email,consulta,emailTo) VALUES (1,NOW(),"Pablo Cliente","pablo.cliente@mail.com","Soy Pablo el cliente ideal","");
-
+INSERT INTO consulta (propiedadId,fecha,nombre,email,consulta,emailTo) VALUES (1,NOW(),"Juan Perez","juan.perez@mail.com","Este es un mensaje mucho mas largo tiene mas lineas","");
+INSERT INTO consulta (propiedadId,fecha,nombre,email,consulta,emailTo) VALUES (1,NOW(),"Isaac Newton","isaac Newton@mail.com","Soy Pablo el cliente ideal","");
 #select * from consulta;

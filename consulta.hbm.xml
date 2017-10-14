@@ -10,6 +10,8 @@
 			<column name="consultaId" />
 			<generator class="identity" />
 		</id> 
-    
+      <property name = "nombre" column = "nombre" type = "string"/>
+      <property name = "email" column = "email" type = "string"/>
+      <property name = "consulta" column = "consulta" type = "string"/>
   </class>
  </hibernate-mapping>  

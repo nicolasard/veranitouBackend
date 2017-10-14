@@ -10,27 +10,31 @@ import org.apache.log4j.Logger;
 
 @Configuration
 @EnableWebSecurity
-public class VeranitouConfiguration
+public class VeranitouSecurityConfig
    extends WebSecurityConfigurerAdapter {
 
-   	final static Logger logger = Logger.getLogger(VeranitouConfiguration.class);
+   	final static Logger logger = Logger.getLogger(VeranitouSecurityConfig.class);
 
   @Autowired
   public void configureGlobal(AuthenticationManagerBuilder auth) {
   	try{
+		logger.info("Configurin the authentication method");
+
   		auth.inMemoryAuthentication().withUser("user").password("123").roles("USER");
   	}
 	catch (Exception ex){
-		logger.error("Excepcion loading VeranitouConfiguration",ex);
+		logger.error("Excepcion loading VeranitouSecurityConfig",ex);
 	}
   }
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 
-		logger.info("Configuring auth form");
+		logger.info("Configurin the secured pages matchers");
+
+		//Here i config how to secure access to certain pages
 	    http.authorizeRequests()
-		.antMatchers("/hola/**").access("hasRole('ROLE_USER')")
+		.antMatchers("/secure/**").access("hasRole('ROLE_USER')")
 		.and()
 		    .formLogin().loginPage("/login").failureUrl("/login?error")
 		    .usernameParameter("username").passwordParameter("password")

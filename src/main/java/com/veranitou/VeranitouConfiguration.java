@@ -28,11 +28,12 @@ public class VeranitouConfiguration
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 
+		logger.info("Configuring auth form");
 	    http.authorizeRequests()
 		.antMatchers("/hola/**").access("hasRole('ROLE_USER')")
 		.and()
 		    .formLogin().loginPage("/login").failureUrl("/login?error")
-		    .usernameParameter("user").passwordParameter("123")
+		    .usernameParameter("username").passwordParameter("password")
 		.and()
 		    .logout().logoutSuccessUrl("/login?logout")
 		.and()

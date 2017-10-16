@@ -17,9 +17,9 @@ import com.veranitou.dao.HibernateUtil;
 import com.veranitou.dao.Consulta;
 
 @RestController
-public class propiedadController {
+public class PropiedadController {
     
-    final static Logger logger = Logger.getLogger(propiedadController.class);
+    final static Logger logger = Logger.getLogger(PropiedadController.class);
 
     @CrossOrigin(origins = "*")
     @RequestMapping("/hola")
@@ -29,15 +29,15 @@ public class propiedadController {
     }
 
     @CrossOrigin(origins="*")
-    @RequestMapping("/configuration")
-    public List<Consulta> configuracion(){
-       logger.info("/configuration");
+    @RequestMapping("/secure/consultas/lista/")
+    public List<Consulta> consultas(){
+        logger.info("/consultas/lista/");
 
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
         List<Consulta> consultas = session.createQuery("from Consulta ").list();
         session.getTransaction().commit();
-       //configuration conf = new configuration();
+
 	   return consultas;
     }
 }

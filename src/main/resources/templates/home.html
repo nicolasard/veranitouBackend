@@ -1,0 +1,36 @@
+<html>
+<head>
+    
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>    
+    <script src="/static/home.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous"/>
+    
+    <style>
+        body {
+            padding-left:5px;
+        }
+    </style>
+
+</head>
+<body>
+<h2>Mi Veranitou</h2>
+<h3>Consultas</h3>
+
+<div ng-app="VeranitouConsultasApp">
+        <div ng-controller="VeranitouConsultasController" data-ng-init="loadConsultas()">
+            <div ng-repeat="consulta in consultas" class="card" style="width: 40rem;">
+                <div class="card-body">
+                    <h4 class="card-title">{{consulta.nombre}}</h4>
+                    <h6 class="card-subtitle mb-2 text-muted">{{consulta.email}}</h6>
+                    <p class="card-text">{{consulta.consulta}}</p>
+                    <a href="#" class="card-link">Eliminar</a>
+                </div>
+            </div>
+        </div>
+</div>
+<p>Server uptime: </p>
+
+</body>
+</html>

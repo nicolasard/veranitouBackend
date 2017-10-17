@@ -30,12 +30,17 @@ public class PropiedadController {
 
     @CrossOrigin(origins="*")
     @RequestMapping("/secure/consultas/lista/")
-    public List<Consulta> consultas(){
-        logger.info("/consultas/lista/");
+    public List<Consulta> consultas(
+        @RequestParam(value = "qty", required = false) int qty,
+        @RequestParam(value = "page", required = false) int page
+         ){
 
+        logger.info("/consultas/lista/");
+        logger.info("qty= page=");
+        int RegistersToSkip = qty*page;
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
-        List<Consulta> consultas = session.createQuery("from Consulta ").list();
+        List<Consulta> consultas = session.createQuery("from Consulta ").setFirstResult(RegistersToSkip).setMaxResults(qty).list();
         session.getTransaction().commit();
 
 	   return consultas;

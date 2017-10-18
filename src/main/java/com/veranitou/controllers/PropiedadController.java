@@ -37,10 +37,15 @@ public class PropiedadController {
 
         logger.info("/consultas/lista/");
         logger.info("qty= page=");
-        int RegistersToSkip = qty*page;
+        int registersToSkip = qty*(page-1);
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
-        List<Consulta> consultas = session.createQuery("from Consulta ").setFirstResult(RegistersToSkip).setMaxResults(qty).list();
+        
+        List<Consulta> consultas = session.createQuery("from Consulta ")
+                                .setFirstResult(registersToSkip)
+                                .setMaxResults(qty)
+                                .list();
+        
         session.getTransaction().commit();
 
 	   return consultas;

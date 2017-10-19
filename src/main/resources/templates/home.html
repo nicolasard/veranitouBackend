@@ -19,7 +19,18 @@
 <h3>Consultas</h3>
 
 <div ng-app="VeranitouConsultasApp">
-        <div ng-controller="VeranitouConsultasController" data-ng-init="loadConsultas()">
+        <div ng-controller="VeranitouConsultasController" data-ng-init="loadConsultas(2,1)">
+
+            <nav aria-label="Page navigation example">
+                <ul class="pagination" style="margin: 1rem  0rem 1rem 0rem;">
+                  <li class="page-item"><a class="page-link" href="#" ng-click="loadConsultas(2,page-1)">Anterior</a></li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item"><a class="page-link" href="#" ng-click="loadConsultas(2,page+1)">Siguiente</a></li>
+                </ul>
+            </nav>
+
             <div ng-repeat="consulta in consultas" class="card" style="width: 40rem;">
                 <div class="card-body">
                     <h4 class="card-title">{{consulta.nombre}}</h4>
@@ -28,6 +39,17 @@
                     <a href="#" class="card-link">Eliminar</a>
                 </div>
             </div>
+
+            <nav aria-label="Page navigation example" style="margin: 1rem  0rem 1rem 0rem;">
+                <ul class="pagination">
+                  <li class="page-item"><a class="page-link" href="#" ng-click="loadConsultas(2,page-1)">Anterior</a></li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item"><a class="page-link" href="#" ng-click="loadConsultas(2,page+1)">Siguiente</a></li>
+                </ul>
+            </nav>
+
         </div>
 </div>
 <p>Server uptime: </p>

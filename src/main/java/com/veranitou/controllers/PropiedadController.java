@@ -22,13 +22,6 @@ public class PropiedadController {
     
     final static Logger logger = Logger.getLogger(PropiedadController.class);
 
-    @CrossOrigin(origins = "*")
-    @RequestMapping("/hola")
-    public String  echo() {
-        logger.info("/hola");
-	   return "hola mundo";
-    }
-
     @CrossOrigin(origins="*")
     @RequestMapping("/secure/consultas/lista/")
     public List<Consulta> consultas(

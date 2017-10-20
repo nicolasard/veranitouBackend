@@ -13,6 +13,7 @@ import org.apache.log4j.Logger;
 import com.veranitou.dao.configuration;
 
 import org.hibernate.Session;
+import org.hibernate.Query;
 import com.veranitou.dao.HibernateUtil;
 import com.veranitou.dao.Consulta;
 
@@ -52,5 +53,24 @@ public class PropiedadController {
         session.getTransaction().commit();
 
 	   return consultas;
+    }
+
+    @CrossOrigin(origins="*")
+    @RequestMapping("/secure/consultas/cantidad/")
+    public Long consultas(){
+
+        logger.info("/consultas/cantidad/");
+        //logger.info("qty={} page={}",Integer.toString(qty),Integer.toString(page));
+        
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        
+        //TODO: Usar cryteria
+        Query query = session.createQuery("select count(*) from Consulta");
+        Long count = (Long)query.uniqueResult();
+        
+        session.getTransaction().commit();
+
+	   return count;
     }
 }

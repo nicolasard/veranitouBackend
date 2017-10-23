@@ -1,7 +1,7 @@
 /*
 	Script para crear las tablas de la version nueva de veranitou.
 */
-
+use veranitou;
 # Tabla de consultas
 DROP TABLE IF EXISTS `consulta`;
 CREATE TABLE `consulta` (
@@ -18,6 +18,22 @@ CREATE TABLE `consulta` (
 # Dummy data 
 TRUNCATE TABLE consulta; 
 INSERT INTO consulta (propiedadId,fecha,nombre,email,consulta,emailTo) VALUES (1,NOW(),"Pablo Cliente","pablo.cliente@mail.com","Soy Pablo el cliente ideal","");
+<<<<<<< HEAD
+
+##########################################################
+##########################################################
+
+#Old tables interface
+DELIMITER |
+CREATE TRIGGER ins_consultas BEFORE INSERT ON bkendConsultas_consulta
+FOR EACH ROW BEGIN
+  INSERT INTO consulta(nombre,email,consulta,fecha,propiedadId)
+  VALUES (NEW.email,NEW.email,NEW.consulta,NOW(),NEW.propiedad_id);
+END
+|
+DELIMITER ;
+=======
 INSERT INTO consulta (propiedadId,fecha,nombre,email,consulta,emailTo) VALUES (1,NOW(),"Juan Perez","juan.perez@mail.com","Este es un mensaje mucho mas largo tiene mas lineas","");
 INSERT INTO consulta (propiedadId,fecha,nombre,email,consulta,emailTo) VALUES (1,NOW(),"Isaac Newton","isaac Newton@mail.com","Soy Pablo el cliente ideal","");
 #select * from consulta;
+>>>>>>> 962b824e8f5f50e2c4f33f8f2c1a0f6e380b81a7

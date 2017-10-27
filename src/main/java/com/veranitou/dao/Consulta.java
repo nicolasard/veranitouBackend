@@ -1,5 +1,7 @@
 package com.veranitou.dao;
 
+import java.util.Date;
+
 public class Consulta implements java.io.Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -11,6 +13,8 @@ public class Consulta implements java.io.Serializable {
 	private String email;
 
 	private String consulta;
+
+	private Date fecha;
 
 	public Integer getConsultaId() {
 		return this.consultaId;
@@ -42,5 +46,13 @@ public class Consulta implements java.io.Serializable {
 
 	public void setConsulta(String consulta){
 		this.consulta = consulta;
+	}
+
+	public Date getFecha(){
+		return this.fecha;
+	}
+
+	public void setFecha(Date fecha){
+		this.fecha = fecha;
 	}
 }

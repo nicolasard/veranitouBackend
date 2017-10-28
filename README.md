@@ -2,6 +2,8 @@
 # VeranitouBackend
 This prented to be an aplication for the backend of my webpage, witch at firs stage of the progect will let you see the users queries at properties in rent.
 
+[![Build Status](https://travis-ci.org/nicolasard/veranitouBackend.svg?branch=master)](https://travis-ci.org/nicolasard/veranitouBackend)
+
 ## Unit Test
 To run the test of the this application run the follow  commands:
 ```

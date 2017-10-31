@@ -3,7 +3,7 @@ angular.module('VeranitouConsultasApp', []).controller('VeranitouConsultasContro
    $scope.ListaConsultasUrl = "/secure/consultas/lista/";
    $scope.CantidadRegistrosUrl = "/secure/consultas/cantidad/"
    $scope.CantidadRegistros = 0;
-   $scope.CatidadPaginas = 0;
+   $scope.Paginas = 0;
    $scope.qty = 2;
    $scope.page = 1;
    $scope.consultas = [];
@@ -21,7 +21,12 @@ angular.module('VeranitouConsultasApp', []).controller('VeranitouConsultasContro
 
     //Calculo la cantidad de hojas 
     var cantidad = $scope.CantidadRegistros / $scope.qty;
-    $scope.CatidadPaginas = cantidad;
+    $scope.Paginas = new Array();
+    for (i = 0; i < cantidad; i++) { 
+        $scope.Paginas.push(i);
+    }
+    console.log($scope.Paginas);
+    console.log("Cantidad",cantidad);
    };
 
    $scope.loadCantidad = function(){

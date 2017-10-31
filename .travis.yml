@@ -1,4 +1,10 @@
 language: java
+branches:
+  only:
+  - master
 jdk:
   - oraclejdk8
 install: mvn install
+after_success:
+  - "Deploying in production..."
+  - "echo $ssh_server"

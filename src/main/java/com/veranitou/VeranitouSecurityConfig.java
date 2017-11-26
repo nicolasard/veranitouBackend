@@ -59,5 +59,4 @@ public class VeranitouSecurityConfig
 	public AuthenticationManager authenticationManagerBean() throws Exception {
 		return super.authenticationManagerBean();
 	}
-
 }

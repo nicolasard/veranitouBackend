@@ -16,8 +16,8 @@
 
 package com.veranitou;
 
-import dao.User;
-import hello.data.UserRepository;
+import com.veranitou.dao.User;
+import com.veranitou.dao.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

@@ -42,7 +42,8 @@ public class OAuth2ServerConfiguration {
             http
                     .authorizeRequests()
                     .antMatchers("/users").hasRole("ADMIN")
-                    .antMatchers("/greeting").authenticated();
+                    .antMatchers("/greeting").authenticated()
+                    .antMatchers("/secure/").authenticated();
             // @formatter:on
         }
 
@@ -81,7 +82,7 @@ public class OAuth2ServerConfiguration {
                     .withClient("clientapp")
                     .authorizedGrantTypes("password", "refresh_token")
                     .authorities("USER")
-                    .scopes("read", "write")
+                    .scopes("read", "write","list_consultas")
                     .resourceIds(RESOURCE_ID)
                     .secret("123456");
             // @formatter:on
